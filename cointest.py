@@ -14,19 +14,19 @@ class MyWindow(QMainWindow):
         self.setWindowTitle("PyQt")
         self.setWindowIcon(QIcon("icon.png"))
 
-        btn = QPushButton("ETC", self)
+        btn = QPushButton("BTC", self)
         btn.move(10, 10)
         btn.clicked.connect(self.btn_clicked1)
-        df = pybithumb.get_ohlcv("ETC")
+        df = pybithumb.get_ohlcv("BTC")
         ma5 = df['close'].rolling(window=5).mean()
         last_ma5 = ma5[-2]
 
-        price = pybithumb.get_current_price("ETC")
+        price = pybithumb.get_current_price("BTC")
 
         if price > last_ma5:
-            print("ETC 상승장")
+            print("BTC 상승장")
         else:
-            print("ETC 하락장")
+            print("BTC 하락장")
         
         btn = QPushButton("MBL", self)
         btn.move(10, 50)
