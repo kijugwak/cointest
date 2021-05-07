@@ -68,7 +68,7 @@ class MyWindow(QMainWindow):
         if price > last_ma5:
             print("CHZ 상승장")
         else:
-            print("XRP 하락장")
+            print("CHZ 하락장")
     class MyApp(QWidget):
         def __init__(self):
             super().__init__()
